@@ -58,6 +58,15 @@
             "type" : "string"
           }
         }
+      },
+      "Schema" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }
       }
     },
     "parameters" : {
