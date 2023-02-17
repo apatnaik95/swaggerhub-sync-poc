@@ -97,15 +97,15 @@
   } ],
   "openapi" : "3.0.1",
   "paths" : {
-    "/v1/sample-message/{id}" : {
+    "/v1/sample-message/{messageId}" : {
       "get" : {
         "tags" : [ "Swagger POC API" ],
         "summary" : "Get sample message",
         "operationId" : "getSampleMessage",
         "parameters" : [ {
-          "name" : "id",
+          "name" : "messageId",
           "in" : "path",
-          "description" : "id",
+          "description" : "messageId",
           "required" : true,
           "schema" : {
             "minimum" : 1,
@@ -198,9 +198,9 @@
         "summary" : "Update sample message",
         "operationId" : "updateSampleMessageById",
         "parameters" : [ {
-          "name" : "id",
+          "name" : "messageId",
           "in" : "path",
-          "description" : "id",
+          "description" : "messageId",
           "required" : true,
           "schema" : {
             "minimum" : 1,
@@ -297,9 +297,9 @@
         "summary" : "Delete sample message by id",
         "operationId" : "deleteSampleMessageById",
         "parameters" : [ {
-          "name" : "id",
+          "name" : "messageId",
           "in" : "path",
-          "description" : "id",
+          "description" : "messageId",
           "required" : true,
           "schema" : {
             "minimum" : 1,
