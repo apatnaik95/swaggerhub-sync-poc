@@ -1,309 +1,9 @@
 {
-  "openapi" : "3.0.1",
-  "info" : {
-    "title" : "Swagger POC API",
-    "description" : "Swagger POC API (v0.0.1-SNAPSHOT DEV #)",
-    "version" : "0.0.1-SNAPSHOT"
-  },
-  "servers" : [ {
-    "url" : "https://data-service-dev.appcanvas-dv.experianhealth.com/SwaggerPOC",
-    "description" : "Generated server url"
-  } ],
   "security" : [ {
     "oauth2" : [ ]
   }, {
     "Bearer" : [ ]
   } ],
-  "tags" : [ {
-    "name" : "Swagger POC API",
-    "description" : "POC for Swaggerhub"
-  } ],
-  "paths" : {
-    "/v1/sample-message/{id}" : {
-      "get" : {
-        "tags" : [ "Swagger POC API" ],
-        "summary" : "Get sample message",
-        "operationId" : "getSampleMessage",
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "description" : "id",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "minimum" : 1,
-            "type" : "integer",
-            "format" : "int32"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Message retrieved successfully",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SampleGetResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_400"
-                }
-              }
-            }
-          },
-          "401" : {
-            "description" : "Unauthorized Request"
-          },
-          "500" : {
-            "description" : "Internal Server Error Occurred",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_400"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put" : {
-        "tags" : [ "Swagger POC API" ],
-        "summary" : "Update sample message",
-        "operationId" : "updateSampleMessageById",
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "description" : "id",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "minimum" : 1,
-            "type" : "integer",
-            "format" : "int32"
-          }
-        } ],
-        "requestBody" : {
-          "description" : "sampleRequest",
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/SampleRequest"
-              }
-            }
-          },
-          "required" : true
-        },
-        "responses" : {
-          "204" : {
-            "description" : "Message updated successfully"
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_400"
-                }
-              }
-            }
-          },
-          "401" : {
-            "description" : "Unauthorized Request"
-          },
-          "500" : {
-            "description" : "Internal Server Error Occurred",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_400"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete" : {
-        "tags" : [ "Swagger POC API" ],
-        "summary" : "Delete sample message by id",
-        "operationId" : "deleteSampleMessageById",
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "description" : "id",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "minimum" : 1,
-            "type" : "integer",
-            "format" : "int32"
-          }
-        } ],
-        "responses" : {
-          "204" : {
-            "description" : "Message deleted successfully"
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_400"
-                }
-              }
-            }
-          },
-          "401" : {
-            "description" : "Unauthorized Request"
-          },
-          "500" : {
-            "description" : "Internal Server Error Occurred",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_400"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/sample-message" : {
-      "get" : {
-        "tags" : [ "Swagger POC API" ],
-        "summary" : "Get sample message",
-        "operationId" : "getSampleMessageContent",
-        "responses" : {
-          "200" : {
-            "description" : "Content retrieved successfully",
-            "content" : {
-              "text/plain" : { }
-            }
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_400"
-                }
-              }
-            }
-          },
-          "401" : {
-            "description" : "Unauthorized Request"
-          },
-          "500" : {
-            "description" : "Internal Server Error Occurred",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_400"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "Swagger POC API" ],
-        "summary" : "Create sample message",
-        "operationId" : "createSampleMessage",
-        "requestBody" : {
-          "description" : "sampleRequest",
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/SampleRequest"
-              }
-            }
-          },
-          "required" : true
-        },
-        "responses" : {
-          "201" : {
-            "description" : "Message created successfully"
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_400"
-                }
-              }
-            }
-          },
-          "401" : {
-            "description" : "Unauthorized Request"
-          },
-          "500" : {
-            "description" : "Internal Server Error Occurred",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_400"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete" : {
-        "tags" : [ "Swagger POC API" ],
-        "summary" : "Delete sample message",
-        "operationId" : "deleteSampleMessage",
-        "requestBody" : {
-          "description" : "sampleRequest",
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/SampleRequest"
-              }
-            }
-          },
-          "required" : true
-        },
-        "responses" : {
-          "204" : {
-            "description" : "Message deleted successfully"
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_400"
-                }
-              }
-            }
-          },
-          "401" : {
-            "description" : "Unauthorized Request"
-          },
-          "500" : {
-            "description" : "Internal Server Error Occurred",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_400"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
   "components" : {
     "schemas" : {
       "SampleRequest" : {
@@ -358,31 +58,6 @@
             "type" : "string"
           }
         }
-      },
-      "inline_response_400" : {
-        "type" : "object",
-        "properties" : {
-          "timeStamp" : {
-            "type" : "string",
-            "format" : "date-time"
-          },
-          "status" : {
-            "type" : "integer",
-            "format" : "int32"
-          },
-          "title" : {
-            "type" : "string"
-          },
-          "errors" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/APIField"
-            }
-          },
-          "path" : {
-            "type" : "string"
-          }
-        }
       }
     },
     "parameters" : {
@@ -390,8 +65,6 @@
         "name" : "Version",
         "in" : "header",
         "required" : false,
-        "style" : "simple",
-        "explode" : false,
         "schema" : {
           "type" : "string"
         }
@@ -417,5 +90,475 @@
         "in" : "header"
       }
     }
-  }
+  },
+  "servers" : [ {
+    "url" : "https://data-service-dev.appcanvas-dv.experianhealth.com/SwaggerPOC",
+    "description" : "Generated server url"
+  } ],
+  "openapi" : "3.0.1",
+  "paths" : {
+    "/v1/sample-message/{id}" : {
+      "get" : {
+        "tags" : [ "Swagger POC API" ],
+        "summary" : "Get sample message",
+        "operationId" : "getSampleMessage",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "schema" : {
+            "minimum" : 1,
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Message retrieved successfully",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SampleGetResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "timeStamp" : {
+                      "type" : "string",
+                      "format" : "date-time"
+                    },
+                    "status" : {
+                      "type" : "integer",
+                      "format" : "int32"
+                    },
+                    "title" : {
+                      "type" : "string"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "items" : {
+                        "$ref" : "#/components/schemas/APIField"
+                      }
+                    },
+                    "path" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized Request"
+          },
+          "500" : {
+            "description" : "Internal Server Error Occurred",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "timeStamp" : {
+                      "type" : "string",
+                      "format" : "date-time"
+                    },
+                    "status" : {
+                      "type" : "integer",
+                      "format" : "int32"
+                    },
+                    "title" : {
+                      "type" : "string"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "items" : {
+                        "$ref" : "#/components/schemas/APIField"
+                      }
+                    },
+                    "path" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Swagger POC API" ],
+        "summary" : "Update sample message",
+        "operationId" : "updateSampleMessageById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "schema" : {
+            "minimum" : 1,
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "sampleRequest",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SampleRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "204" : {
+            "description" : "Message updated successfully"
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "timeStamp" : {
+                      "type" : "string",
+                      "format" : "date-time"
+                    },
+                    "status" : {
+                      "type" : "integer",
+                      "format" : "int32"
+                    },
+                    "title" : {
+                      "type" : "string"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "items" : {
+                        "$ref" : "#/components/schemas/APIField"
+                      }
+                    },
+                    "path" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized Request"
+          },
+          "500" : {
+            "description" : "Internal Server Error Occurred",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "timeStamp" : {
+                      "type" : "string",
+                      "format" : "date-time"
+                    },
+                    "status" : {
+                      "type" : "integer",
+                      "format" : "int32"
+                    },
+                    "title" : {
+                      "type" : "string"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "items" : {
+                        "$ref" : "#/components/schemas/APIField"
+                      }
+                    },
+                    "path" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Swagger POC API" ],
+        "summary" : "Delete sample message by id",
+        "operationId" : "deleteSampleMessageById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "schema" : {
+            "minimum" : 1,
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Message deleted successfully"
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "timeStamp" : {
+                      "type" : "string",
+                      "format" : "date-time"
+                    },
+                    "status" : {
+                      "type" : "integer",
+                      "format" : "int32"
+                    },
+                    "title" : {
+                      "type" : "string"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "items" : {
+                        "$ref" : "#/components/schemas/APIField"
+                      }
+                    },
+                    "path" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized Request"
+          },
+          "500" : {
+            "description" : "Internal Server Error Occurred",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "timeStamp" : {
+                      "type" : "string",
+                      "format" : "date-time"
+                    },
+                    "status" : {
+                      "type" : "integer",
+                      "format" : "int32"
+                    },
+                    "title" : {
+                      "type" : "string"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "items" : {
+                        "$ref" : "#/components/schemas/APIField"
+                      }
+                    },
+                    "path" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/sample-message" : {
+      "get" : {
+        "tags" : [ "Swagger POC API" ],
+        "summary" : "Get sample message",
+        "operationId" : "getSampleMessageContent",
+        "responses" : {
+          "200" : {
+            "description" : "Content retrieved successfully",
+            "content" : {
+              "text/plain" : { }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "timeStamp" : {
+                      "type" : "string",
+                      "format" : "date-time"
+                    },
+                    "status" : {
+                      "type" : "integer",
+                      "format" : "int32"
+                    },
+                    "title" : {
+                      "type" : "string"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "items" : {
+                        "$ref" : "#/components/schemas/APIField"
+                      }
+                    },
+                    "path" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized Request"
+          },
+          "500" : {
+            "description" : "Internal Server Error Occurred",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "timeStamp" : {
+                      "type" : "string",
+                      "format" : "date-time"
+                    },
+                    "status" : {
+                      "type" : "integer",
+                      "format" : "int32"
+                    },
+                    "title" : {
+                      "type" : "string"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "items" : {
+                        "$ref" : "#/components/schemas/APIField"
+                      }
+                    },
+                    "path" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Swagger POC API" ],
+        "summary" : "Create sample message",
+        "operationId" : "createSampleMessage",
+        "requestBody" : {
+          "description" : "sampleRequest",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SampleRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Message created successfully"
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "timeStamp" : {
+                      "type" : "string",
+                      "format" : "date-time"
+                    },
+                    "status" : {
+                      "type" : "integer",
+                      "format" : "int32"
+                    },
+                    "title" : {
+                      "type" : "string"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "items" : {
+                        "$ref" : "#/components/schemas/APIField"
+                      }
+                    },
+                    "path" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized Request"
+          },
+          "500" : {
+            "description" : "Internal Server Error Occurred",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "timeStamp" : {
+                      "type" : "string",
+                      "format" : "date-time"
+                    },
+                    "status" : {
+                      "type" : "integer",
+                      "format" : "int32"
+                    },
+                    "title" : {
+                      "type" : "string"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "items" : {
+                        "$ref" : "#/components/schemas/APIField"
+                      }
+                    },
+                    "path" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "info" : {
+    "title" : "Swagger POC API",
+    "description" : "Swagger POC API (v0.0.1-SNAPSHOT DEV #)",
+    "version" : "0.0.1-SNAPSHOT"
+  },
+  "tags" : [ {
+    "name" : "Swagger POC API",
+    "description" : "POC for Swaggerhub"
+  } ]
 }
