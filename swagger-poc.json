@@ -230,7 +230,10 @@
         },
         "responses" : {
           "204" : {
-            "description" : "Message updated successfully"
+            "description" : "Message updated successfully",
+            "content" : {
+              "multipart/form-data" : { }
+            }
           },
           "400" : {
             "description" : "Bad Request",
@@ -318,7 +321,10 @@
         } ],
         "responses" : {
           "204" : {
-            "description" : "Message deleted successfully"
+            "description" : "Message deleted successfully",
+            "content" : {
+              "image/jpeg" : { }
+            }
           },
           "400" : {
             "description" : "Bad Request",
